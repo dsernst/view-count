@@ -5,10 +5,10 @@ require('./server_utils.js')
 _.run(function () {
     defaultEnv("PORT", 5000)
     defaultEnv("NODE_ENV", "production")
-    defaultEnv("MONGOHQ_URL", "mongodb://localhost:27017/viewcount")
+    defaultEnv("MONGOLAB_URI", "mongodb://localhost:27017/viewcount")
     defaultEnv("SESSION_SECRET", "super_secret")
 
-    var db = require('mongojs')(process.env.MONGOHQ_URL)
+    var db = require('mongojs')(process.env.MONGOLAB_URI)
     var rpc_version = 1
     var rpc = {}
 
